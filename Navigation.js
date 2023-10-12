@@ -14,12 +14,12 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import Payments from "./screens/drawerScreens/Payments";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import { Image, Pressable, StatusBar, useColorScheme } from "react-native";
-import Messages from './screens/tabScreens/Messages'
+import Messages from "./screens/tabScreens/Messages";
 
 //top tabs
 const TopTabs = createMaterialTopTabNavigator();
 
-function TopTabsGroup({navigation}) {
+function TopTabsGroup({ navigation }) {
   return (
     <TopTabs.Navigator
       screenOptions={{
@@ -31,12 +31,7 @@ function TopTabsGroup({navigation}) {
         },
       }}
     >
-      <TopTabs.Screen
-        name="For you"
-        component={Feed}
-        options={{
-        }}
-      />
+      <TopTabs.Screen name="For you" component={Feed} options={{}} />
       <TopTabs.Screen name="Following" component={Feed} />
     </TopTabs.Navigator>
   );
@@ -64,41 +59,53 @@ function HomeStackGroup() {
 //bottom tab
 const Tab = createBottomTabNavigator();
 
-function TabGroup({navigation}) {
+function TabGroup({ navigation }) {
   return (
     <Tab.Navigator
       screenOptions={({ route, navigation }) => ({
         tabBarIcon: ({ color, focused, size }) => {
           let iconName;
           if (route.name === "Feed") {
-            iconName = focused ? "home" : "home-outline";
+            iconName = focused ? "ios-home-sharp" : "ios-home-outline";
           } else if (route.name === "Messages") {
             iconName = focused ? "ios-chatbubble" : "ios-chatbubble-outline";
           } else if (route.name === "Notifications") {
-            iconName = focused ? "ios-notifications" : "notifications-outline";
+            iconName = focused
+              ? "ios-notifications"
+              : "ios-notifications-outline";
           }
 
           return <Ionicons name={iconName} size={size} color={color} />;
         },
         tabBarActiveTintColor: "black",
         tabBarInactiveTintColor: "gray",
-        tabBarShowLabel: false
+        tabBarShowLabel: false,
       })}
     >
       <Tab.Screen
         name="Feed"
         component={TopTabsGroup}
         options={{
-        headerLeft: () => (
-        <Pressable onPress={() => navigation.openDrawer()}>
-          <Image
-            source={require("./assets/beto.jpeg")}
-            style={{ width: 40, height: 40, borderRadius: 100, marginLeft: 15 }}
-          />
-        </Pressable>
-      ), }}
+          headerLeft: () => (
+            <Pressable onPress={() => navigation.openDrawer()}>
+              <Image
+                source={require("./assets/pfp.jpeg")}
+                style={{
+                  width: 40,
+                  height: 40,
+                  borderRadius: 100,
+                  marginLeft: 15,
+                }}
+              />
+            </Pressable>
+          ),
+        }}
       />
-      <Tab.Screen name="Notifications" component={Notifications} options={{tabBarShowLabel: false}}/>
+      <Tab.Screen
+        name="Notifications"
+        component={Notifications}
+        options={{ tabBarShowLabel: false }}
+      />
       <Tab.Screen name="Messages" component={Messages} />
     </Tab.Navigator>
   );
