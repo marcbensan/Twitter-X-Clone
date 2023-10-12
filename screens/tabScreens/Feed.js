@@ -40,11 +40,6 @@ export default function Feed() {
         renderItem={({ item }) => {
           return <Tweet tweet={item} />;
         }}
-        // ListHeaderComponent={() => (
-        //   <View style={styles.header}>
-        //     <Text style={styles.headerTitle}>New tweets available</Text>
-        //   </View>
-        // )}
         ListHeaderComponentStyle={{ backgroundColor: "#ccc" }}
         ItemSeparatorComponent={() => <View style={styles.divider} />}
       />

@@ -14,6 +14,7 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import Payments from "./screens/drawerScreens/Payments";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import { Image, Pressable, StatusBar, useColorScheme } from "react-native";
+import Messages from './screens/tabScreens/Messages'
 
 //top tabs
 const TopTabs = createMaterialTopTabNavigator();
@@ -36,7 +37,7 @@ function TopTabsGroup({navigation}) {
         options={{
         }}
       />
-      <TopTabs.Screen name="Following" component={Payments} />
+      <TopTabs.Screen name="Following" component={Feed} />
     </TopTabs.Navigator>
   );
 }
@@ -71,8 +72,8 @@ function TabGroup({navigation}) {
           let iconName;
           if (route.name === "Feed") {
             iconName = focused ? "home" : "home-outline";
-          } else if (route.name === "Settings") {
-            iconName = focused ? "settings" : "ios-settings-sharp";
+          } else if (route.name === "Messages") {
+            iconName = focused ? "ios-chatbubble" : "ios-chatbubble-outline";
           } else if (route.name === "Notifications") {
             iconName = focused ? "ios-notifications" : "notifications-outline";
           }
@@ -98,7 +99,7 @@ function TabGroup({navigation}) {
       ), }}
       />
       <Tab.Screen name="Notifications" component={Notifications} options={{tabBarShowLabel: false}}/>
-      <Tab.Screen name="Settings" component={Settings} />
+      <Tab.Screen name="Messages" component={Messages} />
     </Tab.Navigator>
   );
 }
@@ -109,10 +110,10 @@ const Drawer = createDrawerNavigator();
 function DrawerGroup() {
   return (
     <Drawer.Navigator screenOptions={{ headerShown: false }}>
-      <Drawer.Screen name="HomeStackGroup" component={HomeStackGroup} />
+      <Drawer.Screen name="Profile" component={HomeStackGroup} />
       <Drawer.Screen
-        name="Payments"
-        component={Payments}
+        name="Settings"
+        component={Settings}
         options={{ headerShown: true }}
       />
     </Drawer.Navigator>
