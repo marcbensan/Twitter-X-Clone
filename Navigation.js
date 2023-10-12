@@ -81,12 +81,13 @@ function TabGroup({navigation}) {
         },
         tabBarActiveTintColor: "black",
         tabBarInactiveTintColor: "gray",
+        tabBarShowLabel: false
       })}
     >
       <Tab.Screen
         name="Feed"
         component={TopTabsGroup}
-        options={{ tabBarLabel: "@venomspood",
+        options={{
         headerLeft: () => (
         <Pressable onPress={() => navigation.openDrawer()}>
           <Image
@@ -96,7 +97,7 @@ function TabGroup({navigation}) {
         </Pressable>
       ), }}
       />
-      <Tab.Screen name="Notifications" component={Notifications} />
+      <Tab.Screen name="Notifications" component={Notifications} options={{tabBarShowLabel: false}}/>
       <Tab.Screen name="Settings" component={Settings} />
     </Tab.Navigator>
   );
