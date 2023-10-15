@@ -26,14 +26,13 @@ export default function Feed() {
           />
         </Pressable>
       ),
-      //headerRight: () => <Button title='Test'/>
     });
   }, []);
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <FlatList
-        data={tweets.slice(0, 30)}
+        data={tweets.slice(69, 129)}
         keyExtractor={(item) => {
           return item.id;
         }}
