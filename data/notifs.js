@@ -132,13 +132,16 @@ export const notifs = [
         <Text style={{ fontSize: 13, color: "#808080" }}>Recently posted</Text>
         {"\n\n"}
         MIGUEL O'HARA WAS CRAZZZYY BRROOO
-        {"\n"}
-        <Image source={require("../assets/miguel.jpg")}/>
+        {'\n'}
       </Text>
     ),
     retweetCount: 636,
     replyCount: 117,
     favoriteCount: 949,
+    img: <Image
+    source={require("../assets/miguel.jpg")}
+    style={{ width: 300, height: 300, borderRadius: 10 }}
+    />
   },
   {
     author: {
@@ -172,7 +175,8 @@ export const notifs = [
         <Text style={{ fontSize: 13, color: "#808080" }}>Replying to </Text>
         <Text style={{ fontSize: 13, color: "#1DA1F2" }}>@jonbernthal</Text>
         {"\n\n"}
-        broo u better come back for season 3 as the punisher againn!! I cant wait to see what youre going to bring to the table! 😎😋
+        broo u better come back for season 3 as the punisher againn!! I cant
+        wait to see what youre going to bring to the table! 😎😋
       </Text>
     ),
     retweetCount: 1,
@@ -191,12 +195,13 @@ export const notifs = [
       <Text>
         <Text style={{ fontSize: 13, color: "#808080" }}>Recently posted </Text>
         {"\n\n"}
-        ksi ROBBED! ksi ROBBED! ksi ROBBED! ksi ROBBED! ksi ROBBED! ksi ROBBED! ksi ROBBED! ksi ROBBED! 🙄
+        ksi ROBBED! ksi ROBBED! ksi ROBBED! ksi ROBBED! ksi ROBBED! ksi ROBBED!
+        ksi ROBBED! ksi ROBBED! 🙄
       </Text>
     ),
-    retweetCount: '5.4k',
-    replyCount: '1.5k',
-    favoriteCount: '24k',
+    retweetCount: "5.4k",
+    replyCount: "1.5k",
+    favoriteCount: "24k",
   },
   {
     author: {

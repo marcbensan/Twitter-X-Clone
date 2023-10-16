@@ -1,25 +1,23 @@
 import { Text, View, StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { FlatList } from "react-native-gesture-handler";
-import Tweet from "../../components/Tweet";
+import Notification from "../../components/Notification";
 import { notifs } from "../../data/notifs";
 
 
 export default function Notifications() {
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <FlatList
+      <FlatList style={{ flex: 1 }}
         data={notifs.slice(0, 10)}
         keyExtractor={(item) => {
           return item.id;
         }}
         renderItem={({ item }) => {
-          return <Tweet tweet={item} />;
+          return <Notification notif={item} />;
         }}
         ListHeaderComponentStyle={{ backgroundColor: "#ccc" }}
         ItemSeparatorComponent={() => <View style={styles.divider} />}
       />
-    </SafeAreaView>
   );
 }
 

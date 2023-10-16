@@ -16,6 +16,10 @@ import { createMaterialTopTabNavigator } from "@react-navigation/material-top-ta
 import { Image, Pressable, StatusBar, useColorScheme } from "react-native";
 import Messages from "./screens/tabScreens/Messages";
 
+const CustomTabIcon = ({ iconSource }) => (
+  <Image source={iconSource} style={{ width: 24, height: 24 }} />
+);
+
 //top tabs
 const TopTabs = createMaterialTopTabNavigator();
 
@@ -86,27 +90,93 @@ function TabGroup({ navigation }) {
         name="Feed"
         component={TopTabsGroup}
         options={{
+          tabBarLabel: false,
+          headerTitle: null,
           headerLeft: () => (
             <Pressable onPress={() => navigation.openDrawer()}>
               <Image
                 source={require("./assets/pfp.jpeg")}
                 style={{
-                  width: 40,
-                  height: 40,
+                  width: 30,
+                  height: 30,
                   borderRadius: 100,
                   marginLeft: 15,
                 }}
               />
             </Pressable>
           ),
+          headerRight: () => (
+            <Image
+              source={require("./assets/icon.png")}
+              style={{
+                width: 20,
+                height: 20,
+                marginRight: 15,
+              }}
+            />
+          ),
         }}
       />
       <Tab.Screen
         name="Notifications"
         component={Notifications}
-        options={{ tabBarShowLabel: false }}
+        options={{
+          tabBarLabel: false,
+          headerLeft: () => (
+            <Pressable onPress={() => navigation.openDrawer()}>
+              <Image
+                source={require("./assets/pfp.jpeg")}
+                style={{
+                  width: 30,
+                  height: 30,
+                  borderRadius: 100,
+                  marginLeft: 15,
+                }}
+              />
+            </Pressable>
+          ),
+          headerRight: () => (
+            <Image
+              source={require("./assets/icon.png")}
+              style={{
+                width: 20,
+                height: 20,
+                marginRight: 15,
+              }}
+            />
+          ),
+        }}
       />
-      <Tab.Screen name="Messages" component={Messages} />
+      <Tab.Screen
+        name="Messages"
+        component={Messages}
+        options={{
+          tabBarLabel: false,
+          headerLeft: () => (
+            <Pressable onPress={() => navigation.openDrawer()}>
+              <Image
+                source={require("./assets/pfp.jpeg")}
+                style={{
+                  width: 30,
+                  height: 30,
+                  borderRadius: 100,
+                  marginLeft: 15,
+                }}
+              />
+            </Pressable>
+          ),
+          headerRight: () => (
+            <Image
+              source={require("./assets/icon.png")}
+              style={{
+                width: 20,
+                height: 20,
+                marginRight: 15,
+              }}
+            />
+          ),
+        }}
+      />
     </Tab.Navigator>
   );
 }
@@ -131,10 +201,8 @@ export default function Navigation() {
   const currentTheme = useColorScheme();
 
   return (
-    <NavigationContainer
-      theme={currentTheme === "dark" ? DarkTheme : DefaultTheme}
-    >
-      <StatusBar style="auto" />
+    <NavigationContainer>
+      <StatusBar backgroundColor="#000000" />
       <DrawerGroup />
       {/*<HomeStackGroup />*/}
     </NavigationContainer>

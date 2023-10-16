@@ -50,7 +50,7 @@ export const tweets = [
     },
     id: "1480543522465976324",
     fullText:
-      "mi único propósito para 2022 es dejar de despedirme con la mano en las videollamadas como si fuera idiota",
+      "My husband sure has a lot of opinions on which movie he’s gonna sleep through.",
     retweetCount: 2,
     replyCount: 14,
     favoriteCount: 64,
@@ -257,7 +257,7 @@ export const tweets = [
     },
     id: "1480824991486824448",
     fullText:
-      "Para cumplir todas las tradiciones de estas fechas sólo me faltaba una cosa: la revisión de 2021 y los objetivos de 2022.\n\nEn este episodio con @chusnarrolo, que viene de un año movidito, hablamos del presente y del futuro de nuestras #marcas.\n\n#Podcast\nhttps://t.co/7YA6KrPrwX",
+      "Im giving you a bath, with or without you!(and other ridiculous things I say as a parent).",
     retweetCount: 0,
     replyCount: 0,
     favoriteCount: 1,
